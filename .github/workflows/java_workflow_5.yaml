@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  Grußformel: Herr
+  Grussformel: Hallo
 
 jobs:
   build-test:
@@ -72,7 +72,7 @@ jobs:
       - name: Console output
         env:
           Passwortnutzen: Steam 
-        run: echo $Grußformel $Nutzername, das Passwort für $Passwortnutzen ist ${{ secrets.PASSWORT }}!
+        run: echo $Grussformel $Nutzername, das Passwort für $Passwortnutzen ist ${{ secrets.PASSWORT }}!
   
   
   
