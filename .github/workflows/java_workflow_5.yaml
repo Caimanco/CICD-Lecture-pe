@@ -13,7 +13,6 @@ jobs:
   build-test:
     runs-on: ubuntu-latest
     needs: console-output
-    if: always()
 
     strategy:
       matrix:
@@ -23,7 +22,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
   
-      - name: Set up JDK 21
+      - name: Set up JDK ${{ matrix.JDK-v }}
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
