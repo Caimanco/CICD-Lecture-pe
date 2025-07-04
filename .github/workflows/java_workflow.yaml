@@ -29,6 +29,23 @@ jobs:
         with:
           name: junit-results
           path: target/surefire-reports/
+
+  linter-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Maven Checkstyle
+        run: mvn checkstyle:check
+    
+      - name: Archive checkstyle result
+        if: always()
+        uses: actions/artifact@v4
+        with:
+          name: checkstyle-result
+          path: target/
   
   
   
